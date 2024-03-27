@@ -2,10 +2,10 @@ const fs = require('fs');
 
 // 1) 동기식으로 읽기
 // const file01 = fs.readFileSync('./01.전역변수.js');
-// console.log(file01);
+// console.log(file01.toString());
 // console.log('==========================================================');
 // const file02 = fs.readFileSync('./02.os.js');
-// console.log(file02);
+// console.log(file02.toString());
 // console.log('==========================================================');
 
 
