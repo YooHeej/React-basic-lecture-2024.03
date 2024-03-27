@@ -1,0 +1,28 @@
+let str = 'c:/Temp/ss/profile/jaems.jpg';
+// 파일의 타입
+let idx = str.lastIndexOf('.');
+console.log(str.substring(idx+1));
+// 파일이 있는 제일 마지막 디렉토리명
+let arr = str.split('/');
+console.log(arr[arr.length - 2]);
+
+const fruits = ['apple', 'banana', 'cherry'];
+fruits.push('melon');
+console.log(fruits.join(', '));
+
+const numbers = [4, 7, 10, 9, 15, 6];
+console.log(numbers);
+console.log(numbers.sort((x,y) => x-y));  // 오름차순 정렬, 배열 자체가 변화함
+
+fruits.forEach(value => {
+  console.log(value);
+});
+fruits.forEach((value, index) => {
+  console.log(value, index);
+});
+
+let power = numbers.map(val => val * val);
+console.log(power);
+
+let even = numbers.filter(val => val % 2 == 0);
+console.log(even);

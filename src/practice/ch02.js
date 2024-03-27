@@ -12,3 +12,4 @@ for (let i = 0; i<4; i++) {
 
 console.log(`2 == '2' is ${2 == '2'}`);     // true, 값은 같음
 console.log(`2 === '2' is ${2 === '2'}`);   // false, 값은 같으나 자료형이 다름
+
