@@ -26,3 +26,16 @@ console.log(power);
 
 let even = numbers.filter(val => val % 2 == 0);
 console.log(even);
+console.log(fruits.filter(val => val.length >= 6));
+
+let sum = numbers.reduce((prev, curr) => prev + curr, 0);
+console.log(sum);   // 51 [4, 7, 10, 9, 15, 6]의 합
+console.log(numbers.reduce((prev, curr) => prev * curr, 1));
+
+const complex = [
+  {name:'pad', price:150000}, {name:'mouse', price:80000}, {name:'pen', price:30000}
+];
+const jsonComplex = JSON.stringify(complex);
+console.log(JSON.stringify(complex));
+const parseComplex = JSON.parse(jsonComplex);
+console.log(parseComplex);
