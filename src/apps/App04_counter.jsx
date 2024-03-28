@@ -21,4 +21,4 @@ function App() {
   );
 }
 
-export default App; // tag 이름 -> 대문자
+export default App;
