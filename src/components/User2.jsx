@@ -10,7 +10,7 @@ export default function User() {
   const [form, setForm] = useState({id:'', name:'', email:''});
   const handleSubmit = (event) => {
     event.preventDefault();         // submit button을 누르면 페이지가 자동적으로 바뀌는 것을 방지
-    const existUser = user.find(user => user.id == form.id);
+    const existUser = users.find(user => user.id == form.id);
     const newUsers = [];
     if (existUser) {
       // 값을 변경
@@ -56,13 +56,8 @@ export default function User() {
         <input type="text" id='email' name='email' value={form.email}
           onChange={handleChange}/>
           <br />
+      <button>추가/수정</button>
       </form>
-      <button onClick={() => {
-        const id = prompt('ID값을 입력');
-        const name = prompt('이름을 입력');
-        const email = prompt('E-mail을 입력');
-        setUsers([...users, {id, name, email}]);
-      }}>추가/수정</button>
       <button onClick={() => {
         const id = prompt("ID 값 입력");
         setUsers(users.filter(user => user.id !=id));
