@@ -10,16 +10,17 @@ export default function User() {
   const [form, setForm] = useState({id:'', name:'', email:''});
   const handleSubmit = (event) => {
     event.preventDefault();         // submit button을 누르면 페이지가 자동적으로 바뀌는 것을 방지
-    const existUser = users.find(user => user.id == form.id);
-    const newUsers = [];
+    const existUser = users.find(user => user.id === form.id);
+    // const newUsers = [];
     if (existUser) {
+      setUsers(users.map(user => user.id === form.id ? form : user)) // 아래 주석과 같은 뜻
       // 값을 변경
-      for (let user of users)
-        if (user.id == form.id)
-          newUsers.push(form);
-        else
-          newUsers.push(user);
-      setUsers(newUsers);
+      // for (let user of users)
+      //   if (user.id == form.id)
+      //     newUsers.push(form);
+      //   else
+      //     newUsers.push(user);
+      // setUsers(newUsers);
     } else
       setUsers([...users, form]);
   }
