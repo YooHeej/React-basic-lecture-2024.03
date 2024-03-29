@@ -1,6 +1,6 @@
-import Button from '@mui/material/Button';
-import '../apps/App.css';
+import {Badge} from 'react-bootstrap';
 import { FaRegTrashAlt } from "react-icons/fa";
+
 
 
 export default function Todo({todo, onUpdate, onDelete}) {
@@ -11,11 +11,13 @@ export default function Todo({todo, onUpdate, onDelete}) {
   }
   const handleDelete = () => onDelete(todo);
   return (
-      <li>
+      <tr>
+        <td>      
         <input type='checkbox' id={id} checked={status === 'completed'}
           onChange={handleChange}/>
-        <label htmlFor="{id}">{work}</label>
-        <Button variant="outlined" onClilck={handleDelete}><FaRegTrashAlt /></Button>
-      </li>
+        </td>
+        <td><label htmlFor="{id}">{work}</label></td>
+        <td><Badge bg='warning' onClilck={handleDelete}><FaRegTrashAlt /></Badge></td>
+      </tr>
   );
 }
