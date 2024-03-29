@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import '../apps/App.css';
-import { FaRegTrashAlt } from "react-icons/fa";
-import { v4 as uuidv4 } from 'uuid';
 import AddTodo from './AddTodo';
 import Todo from './Todo';
 
-export default function TodoList() {
+export default function TodoList({filter}) {
   const initData = readFromLocalStorage()
   const [todos, setTodos] = useState(initData);
   const handleUpdate = updated =>
@@ -18,11 +16,12 @@ export default function TodoList() {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
 
+  const filteredTodos = getFilteredTodos(todos, filter);
   return (
     <div>
       <ul>
         {
-          todos.map(todo => (
+          filteredTodos.map(todo => (
             <Todo todo={todo} onUpdate={handleUpdate} onDelete={handleDelete} />
           ))
         }
@@ -36,4 +35,10 @@ function readFromLocalStorage() {
   const todos = localStorage.getItem('todos');
   console.log(todos);
   return todos ? JSON.parse(todos) : [];
+}
+
+function getFilteredTodos(todos, filter) {
+  if (filter === 'all')
+    return todos;
+  return todos.filter(todo => todo.status === filter);
 }
