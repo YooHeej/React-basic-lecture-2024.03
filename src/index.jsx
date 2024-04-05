@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './apps/App99_eaxm';
+// import App from './apps/App99_eaxm';
 import reportWebVitals from './reportWebVitals';
-
+import BasicTable from './mui/BasicTable';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <div style={{marginTop:'40px', marginLeft: '20px'}}></div>
+      <BasicTable />
+    {/* <App /> */}
   </React.StrictMode>
 );
 
