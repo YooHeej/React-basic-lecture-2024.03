@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './apps/App99_eaxm';
 import reportWebVitals from './reportWebVitals';
-import BasicTable from './mui/BasicTable';
+import BasicModal from './mui/BasicModal';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div style={{marginTop:'40px', marginLeft: '20px'}}></div>
-      <BasicTable />
+    <div style={{marginTop:'40px', marginLeft: '20px', marginRight: '20px',}}></div>
+      <BasicModal />
     {/* <App /> */}
   </React.StrictMode>
 );
